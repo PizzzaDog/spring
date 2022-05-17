@@ -1,21 +1,22 @@
 package com.andersen.controller;
 
 import com.andersen.service.HelloService;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Controller;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 @RequestMapping("/")
-@RequiredArgsConstructor
 public class HelloController {
 
-    private final HelloService helloService;
+    @Autowired
+    private HelloService helloService;
 
 
     @GetMapping("/hello")
     public String helloWorld() {
-        return helloService.getHelloWorld();
+//        return helloService.getHelloWorld();
+        return "Hello";
     }
 }

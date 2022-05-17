@@ -10,4 +10,5 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @ComponentScan("com.andersen")
 public class MyConfig implements WebMvcConfigurer {
 
+
 }
